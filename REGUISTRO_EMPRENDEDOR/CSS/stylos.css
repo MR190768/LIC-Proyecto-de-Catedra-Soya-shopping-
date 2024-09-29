@@ -9,7 +9,7 @@ body {
 }
 .banner {
     background-color: #7f214b !important;
-    color: rgb(235, 225, 225);
+    color: white;
     text-align: center;
     padding: 1rem;
     font-size: 1.2rem;
@@ -17,7 +17,7 @@ body {
 .logo-container {
     text-align: center;
     padding: 1rem;
-    background-color: rgb(222, 215, 215);
+    background-color: white;
 }
 .logo {
     max-width: 150px;
