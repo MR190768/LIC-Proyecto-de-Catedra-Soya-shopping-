@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoyaShopping - Agregar Productos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylos.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h2 class="mb-4">Agregar Productos</h2>
+                <form id="productForm" class="mb-5">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="productName" placeholder="Nombre del producto" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" class="form-control" id="productPrice" placeholder="Precio" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="productDescription" placeholder="Descripción" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productImage" class="form-label">Imagen del producto</label>
+                        <input type="file" class="form-control" id="productImage" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Agregar Producto</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4">Lista de Productos</h2>
+                <ul id="productList" class="list-group"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="funcion.js"></script>
+
+</body>
+</html>

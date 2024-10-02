@@ -1,0 +1,45 @@
+//Caso de prueba rediter
+POST http://localhost:3001/soyashopping/register/user HTTP/1.1
+Content-Type: application/json
+
+{
+            "usuarioName": "juan",
+            "contrasena": "eljuan",
+            "email":"juan@gmail.com",
+            "Fecha_registro":"2024-09-30",
+            "status": "INACTIVO"
+}
+###
+//Caso de prueba login
+POST http://localhost:3001/soyashopping/login HTTP/1.1
+Content-Type: application/json
+
+{
+            "usuarioName": "Alejandro",
+            "contrasena": "gtacinco"
+}
+###
+//Caso de prueba Read
+GET  http://localhost:3001/soyashopping/read/info HTTP/1.1
+Content-Type: application/json
+
+{
+    "quer": "SELECT * FROM usuario"
+}
+###
+//Caso read restricted
+POST   http://localhost:3001/soyashopping/read/info/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "quer": "SELECT * FROM usuario WHERE usuarioName=?",
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvTmFtZSI6IkFsZWphbmRybyIsImNvbnRyYXNlbmEiOiJndGFjaW5jbyIsImlhdCI6MTcyNzgzODk2NywiZXhwIjoxNzI3ODM5NTY3fQ.7VTNc-21fq2pDnA5aIKeesWKJ8ATFJI5MyrUjozRxHQ"
+}
+###
+//Caso de prueba logout
+POST http://localhost:3001/soyashopping/logout HTTP/1.1
+Content-Type: application/json
+
+{
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvTmFtZSI6IkFsZWphbmRybyIsImNvbnRyYXNlbmEiOiJndGFjaW5jbyIsImlhdCI6MTcyNzgzODk2NywiZXhwIjoxNzI3ODM5NTY3fQ.7VTNc-21fq2pDnA5aIKeesWKJ8ATFJI5MyrUjozRxHQ"
+}
