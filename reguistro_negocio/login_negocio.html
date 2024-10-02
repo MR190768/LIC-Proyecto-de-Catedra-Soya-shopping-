@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Negocio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card p-5 shadow-lg">
+            <div class="text-center mb-4">
+                <!-- Logo del negocio -->
+                <img src="/imagenes/logo.png" alt="Logo" class="img-fluid" id="logo">
+            </div>
+            <form id="registerForm">
+                <!-- Inicio usuario -->
+                <div class="mb-3">
+                    <label for="usuario" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario" required>
+                </div>
+                <!-- Inicio nombre del negocio -->
+                <div class="mb-3">
+                    <label for="nombreNegocio" class="form-label">Nombre de Negocio</label>
+                    <input type="text" class="form-control" id="nombreNegocio" placeholder="Nombre del negocio" required>
+                </div>
+                <!-- Inicio email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Ingrese su email" required>
+                </div>
+                <!-- Inicio contraseña -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+                </div>
+                <!-- Botón de registrar -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Registrar Negocio</button>
+                </div>
+            </form>
+            <!-- Enlace para iniciar sesión -->
+            <div class="mt-3 text-center">
+                <a href="login.html" class="text-decoration-none">¿Ya tienes cuenta? Iniciar sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
