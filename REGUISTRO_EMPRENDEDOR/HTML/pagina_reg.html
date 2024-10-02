@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/REGUISTRO_EMPRENDEDOR/CSS/stylos.css">
+    <title>Registro de Emprendedor</title>
+
+</head>
+<body>
+    <div class="banner">
+        ¡Bienvenido al registro de Emprendedores !
+    </div>
+    <div class="logo-container">
+        <img src="/IMAGENES/logo.png" alt="Logo de la empresa" class="logo">
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <h1>Registro de Emprendedor</h1>
+            <form id="registroForm">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+                
+                <label for="empresa">Nombre de la empresa</label>
+                <input type="text" id="empresa" name="empresa" required>
+                
+                <label for="sector">Sector de la industria</label>
+                <select id="sector" name="sector" required>
+                    <option value="">Selecciona un sector</option>
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="salud">Salud</option>
+                    <option value="educacion">Educación</option>
+                    <option value="finanzas">Finanzas</option>
+                    <option value="otro">Otro</option>
+                </select>
+                
+                <label for="descripcion">Breve descripción del producto</label>
+                <textarea id="descripcion" name="descripcion" rows="3" required></textarea>
+                
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+        <script src="/REGUISTRO_EMPRENDEDOR/JS/reguistro.js"></script>
+</body>
+</html>
