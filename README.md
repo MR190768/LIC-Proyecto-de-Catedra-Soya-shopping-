@@ -4,8 +4,8 @@ Integrnates:
 ##  Oscar Alexander Cortez Ramos	CR211129 
 ##  Carlos Alberto Amaya Carcamo	AC220139 
 ##  Franklin Adonay Cruz Menjivar	CM222471
-##  Kleberson Rafael Mejía Pérez    MP202140
-##  Gerson Adonai Martinez Ramirez	MR190768 
+##  Gerson Adonai Martinez Ramirez	MR190768
+##  Kleberson Rafael Mejia Perez MP202140
 
 Links:
 Trello: https://trello.com/b/Xo3f3wKY/proyecto-de-catedra-lic104
