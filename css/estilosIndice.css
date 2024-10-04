@@ -1,4 +1,13 @@
 
+.btn-primary {
+  background-color: #aa4369;
+  border-color: #aa4369;
+}
+
+.btn-primary:hover {
+  background-color: #7f214b;
+  border-color: #7f214b;
+}
 .productosMin {
     transition: all linear .2s;
     width: 280px;
@@ -137,19 +146,16 @@
 .navBtn {
   position: relative;
   display: block;
-  text-transform: uppercase;
-  margin: 20px 0px;
+  margin: 20px 20px;
   padding: 10px 0px;
   text-decoration: none;
   color: #aa4369;
-  font-family: sans-serif;
-  font-size: 18px;
-  font-weight: 600;
   background: none;
   border: none;
   cursor: pointer;
   transition: .5s;
   z-index: 1;
+  text-align: center;
 }
 
 

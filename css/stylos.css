@@ -19,8 +19,9 @@ body {
     padding: 1rem;
     background-color: white;
 }
-.logo {
-    max-width: 150px;
+
+.logo{
+    width: 175px;
     height: auto;
 }
 .container {
