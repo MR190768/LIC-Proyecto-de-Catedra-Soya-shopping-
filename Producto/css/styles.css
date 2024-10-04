@@ -1,0 +1,324 @@
+.btn-primary {
+    background-color: #aa4369;
+    border-color: #aa4369;
+  }
+  
+  .btn-primary:hover {
+    background-color: #7f214b;
+    border-color: #7f214b;
+  }
+  
+  .productosMin {
+    transition: all linear .2s;
+    width: 280px;
+    display: flex;
+  }
+  
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  
+  .product-details {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .productosMin:hover,
+  .productosMin:active {
+    box-shadow: .2em .5em .5em rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+  }
+  
+  .nav-link {
+    width: 75px;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #aa4369 !important;
+  }
+  
+  .btnrosa {
+    background-color: #380720;
+    margin: 0 20px;
+  }
+  
+  .card-body-item {
+    height: 10rem;
+  }
+  
+  .card-body-cat {
+    height: 23rem;
+  }
+  
+  .bg-primary {
+    background-color: #7f214b !important;
+  }
+  
+  #produIMG {
+    height: 200px;
+  }
+  
+  #imgslide {
+    height: 600px;
+    width: 1920px;
+  }
+  
+  .carousel-item {
+    transition: transform 1.6s ease-in-out;
+  }
+  
+  .carousel-fade .active.carousel-item-start,
+  .carousel-fade .active.carousel-item-end {
+    transition: opacity 0s 2.6s;
+  }
+  
+  @keyframes transicion1 {
+    from {
+      opacity: 0;
+      scale: 25%;
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+  
+  .productosMin, .categoria {
+    animation-name: transicion1;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes iconoAniamcion {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .iconocat:hover {
+    animation-duration: 0.9s;
+    animation-name: iconoAniamcion;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+  
+  #buscador {
+    position: relative;
+    display: block;
+    margin: 13px 0;
+    padding: 10px 20px;
+  }
+  
+  .navperfil {
+    margin: 20px 20px;
+    padding: 10px 0px;
+    text-decoration: none;
+    color: #aa4369;
+    cursor: pointer;
+    transition: .5s;
+  }
+  
+  .navBtn {
+    margin: 20px 20px;
+    padding: 10px 0px;
+    text-decoration: none;
+    color: #aa4369;
+    cursor: pointer;
+    transition: .5s;
+    text-align: center;
+  }
+  
+  .navBtn:before, .navperfil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #aa4369;
+    border-bottom: 2px solid #aa4369;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: .3s;
+  }
+  
+  .navBtn:after, .navperfil::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #aa4369;
+    transform: scale(0);
+    opacity: 0;
+    transition: .3s;
+    z-index: -1;
+  }
+  
+  .navBtn:hover, .navperfil:hover {
+    color: #fff;
+  }
+  
+  .navBtn:hover:before, .navperfil:hover:before {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  
+  .navBtn:hover:after, .navperfil:hover:after {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  
+  .profile-header {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .profile-header-cover img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .profile-header .profile-header-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .profile-header .profile-header-cover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .75) 100%);
+  }
+  
+  .profile-header .profile-header-content {
+    color: #fff;
+    padding: 25px;
+  }
+  
+  .profile-header-img {
+    float: left;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    margin: 0 0 -20px;
+    padding: 3px;
+    border-radius: 4px;
+    background: #fff;
+  }
+  
+  .profile-header-img img {
+    max-width: 100%;
+  }
+  
+  .profile-header-info h4 {
+    font-weight: 500;
+    color: #fff;
+  }
+  
+  .profile-header-img + .profile-header-info {
+    margin-left: 140px;
+  }
+  
+  .profile-content {
+    padding: 25px;
+    border-radius: 4px;
+  }
+  
+  .profile-content:after,
+  .profile-content:before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  .profile-left {
+    width: 200px;
+    float: left;
+  }
+  
+  .profile-right {
+    margin-left: 240px;
+    padding-right: 20px;
+  }
+  
+  .profile-image {
+    height: 175px;
+    line-height: 175px;
+    text-align: center;
+    font-size: 72px;
+    margin-bottom: 10px;
+    border: 2px solid #E2E7EB;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  
+  .profile-image img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .profile-highlight {
+    padding: 12px 15px;
+    background: #FEFDE1;
+    border-radius: 4px;
+  }
+  
+  .table.table-profile > tbody > tr > td,
+  .table.table-profile > thead > tr > th {
+    border: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: #242a30;
+    background: 0 0;
+  }
+  
+  .table.table-profile > tbody > tr > td.field {
+    width: 20%;
+    text-align: right;
+    font-weight: 600;
+    color: #2d353c;
+  }
+  
+  .profile-section + .profile-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #b9c3ca;
+  }
+  
+  .profile-section .title {
+    font-size: 20px;
+    margin: 0 0 15px;
+  }
