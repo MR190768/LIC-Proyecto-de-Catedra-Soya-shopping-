@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `LIC`.`Negocio` (
   `id_serv` INT NOT NULL,
   `id_Usario` INT NOT NULL,
   `ubicacion` VARCHAR(200) NULL,
+  `Descripcion` VARCHAR(200) NULL,
   `Imagen` VARCHAR(200) NULL,
   PRIMARY KEY (`id_negocio`),
   CONSTRAINT `FK__Negocio__id_serv__286302EC`
