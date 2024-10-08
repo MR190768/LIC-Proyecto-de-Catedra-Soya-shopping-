@@ -3,9 +3,9 @@ POST http://localhost:3001/soyashopping/register/user HTTP/1.1
 Content-Type: application/json
 
 {
-            "usuarioName": "juan",
-            "contrasena": "eljuan",
-            "email":"juan@gmail.com",
+            "usuarioName": "marco",
+            "contrasena": "panson",
+            "email":"marco@gmail.com",
             "Fecha_registro":"2024-09-30",
             "status": "INACTIVO"
 }

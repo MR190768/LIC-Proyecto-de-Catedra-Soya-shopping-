@@ -4,6 +4,7 @@ import bodyParser from "body-parser"; //la da la capicidad de enteder estructura
 import bcrypt from 'bcrypt'; //encriptacion de datos
 import jwt from "jsonwebtoken"; //generador de tokens
 import mysql from "mysql"; //utilizacion de mysql en nuestro entorno
+import cors  from "cors"; // Paquete que facilita los permisos CORS
 
 
 
@@ -31,6 +32,7 @@ function CambiarStatus(user,estado){
 }
 
 app.use(bodyParser.json()); 
+app.use(cors()); //Permite permisos cors
 
 
 //Metodo POST registrar: recibe los datos del nuevo usario, encripta contraseña y los registra

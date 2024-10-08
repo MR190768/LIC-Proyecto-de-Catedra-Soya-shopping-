@@ -4,22 +4,33 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
   
+      var fecha=new Date();
       const nombre = document.getElementById('nombre').value;
-      const email = document.getElementById('email').value;
+      const correo = document.getElementById('email').value;
       const password = document.getElementById('password').value;
   
       try {
         const response = await fetch('http://localhost:3001/soyashopping/register/user', {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             usuarioName: nombre,
-            email: email,
             contrasena: password,
-            }),
+            email: correo,
+            Fecha_registro:fecha.getFullYear()+"-"+fecha.getMonth()+"-"+fecha.getDate(),
+            status: "INACTIVO"
+            })
         });
+
+        console.log(JSON.stringify({
+          usuarioName: nombre,
+          contrasena: password,
+          email: correo,
+          Fecha_registro:fecha.getFullYear()+"-"+fecha.getMonth()+"-"+fecha.getDate(),
+          status: "INACTIVO"
+          }))
   
         const data = await response.json();
   
