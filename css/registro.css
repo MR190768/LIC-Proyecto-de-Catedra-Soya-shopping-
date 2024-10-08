@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(45deg, #FF6B6B, #6B5B95);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.banner {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.container {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.form-container {
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #FF6B6B;
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #FF6B6B, #FF9A8B);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.error-message {
+    color: #FF6B6B;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        border-radius: 15px;
+    }
+
+    .form-container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    input {
+        padding: 10px 12px;
+    }
+
+    button {
+        padding: 10px;
+    }
+}
