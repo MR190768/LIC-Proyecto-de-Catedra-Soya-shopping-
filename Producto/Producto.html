@@ -9,6 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+    <script src="js/producto_comentarios.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <title>Producto</title>
@@ -74,7 +75,7 @@
   <div class="container product-details">
     <div class="row">
       <div class="col-md-6">
-        <img src="img/ejem/comida2.jpg" alt="Nombre del Producto" class="product-image">
+        <img src="img/ejem/comida1.jpg" alt="Nombre del Producto" class="product-image">
       </div>
       <div class="col-md-6">
         <h2>Nombre del Producto</h2>
@@ -102,7 +103,7 @@
 
   <div class="container mt-4">
     <h3>Comentarios y Reseñas</h3>
-    <form>
+    <form id="comentario-form">
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre</label>
         <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre">
@@ -123,7 +124,13 @@
       </div>
       <button type="submit" class="btn btn-primary">Enviar Comentario</button>
     </form>
+
+    <div class="mt-4">
+      <h4>Comentarios anteriores</h4>
+      <div id="lista-comentarios"></div>
+    </div>
   </div>
+</div>
   <div>
     <h1></h1>
   </div>
