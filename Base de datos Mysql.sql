@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `LIC`.`Usuario` (
   `contrasena` VARCHAR(500) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `Fecha_registro` DATE NOT NULL,
+  `ImagenP` VARCHAR(500) NULL,
   `status` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`id_Usario`),
   UNIQUE (usuarioName),
@@ -44,13 +45,13 @@ CREATE TABLE IF NOT EXISTS `LIC`.`Tipo_servicio` (
 CREATE TABLE IF NOT EXISTS `LIC`.`Negocio` (
   `id_negocio` INT NOT NULL  AUTO_INCREMENT,
   `nombreN` VARCHAR(100) NOT NULL,
-  `horaAbrir` TIME NOT NULL,
-  `horaCerrar` TIME NOT NULL,
+  `horaAbrir` VARCHAR(10) NOT NULL,
+  `horaCerrar` VARCHAR(10) NOT NULL,
   `id_serv` INT NOT NULL,
   `id_Usario` INT NOT NULL,
   `ubicacion` VARCHAR(200) NULL,
   `Descripcion` VARCHAR(200) NULL,
-  `Imagen` VARCHAR(200) NULL,
+  `Imagen` VARCHAR(500) NULL,
   PRIMARY KEY (`id_negocio`),
   CONSTRAINT `FK__Negocio__id_serv__286302EC`
     FOREIGN KEY (`id_serv`)
@@ -83,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `LIC`.`Producto` (
   `id_negocio` INT NOT NULL,
   `precio` DECIMAL(19,4) NOT NULL,
   `Descripcion` VARCHAR(200) NULL,
-  `ImagenP` VARCHAR(200) NULL,
+  `ImagenP` VARCHAR(500) NULL,
   PRIMARY KEY (`id_producto`),
   CONSTRAINT `FK__Producto__id_cat__2E1BDC42`
     FOREIGN KEY (`id_cat`)
@@ -99,10 +100,10 @@ CREATE TABLE IF NOT EXISTS `LIC`.`Producto` (
 -- ----------------------------------------------------------------------------
 -- Table LIC.Reseña
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `LIC`.`Reseña` (
+CREATE TABLE IF NOT EXISTS `LIC`.`Resena` (
   `id_res` INT NOT NULL  AUTO_INCREMENT,
   `Resenador` VARCHAR(150) NULL,
-  `Reseña` VARCHAR(250) NOT NULL,
+  `Resena` VARCHAR(250) NOT NULL,
   `Calificacion` INT NULL,
   `id_producto` INT NOT NULL,
   PRIMARY KEY (`id_res`),

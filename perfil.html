@@ -66,7 +66,7 @@
             </form>
           </li>
         </ul>
-        <button class="btn btn-outline-light btnrosa " type="submit">CERRAR SESION</i></button>
+        <button class="btn btn-outline-light btnrosa " type="submit" id="logout">CERRAR SESION</i></button>
         <button class="btn btn-outline-light " type="submit">PERFIL</i></button>
       </div>
     </div>
@@ -85,12 +85,12 @@
               <div class="profile-header-content">
 
                 <div class="profile-header-img">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                  <img src="" alt="perfil" id="imgPerfil">
                 </div>
 
                 <div class="profile-header-info">
-                  <h4 class="m-t-10 m-b-5">Nombre de Usuario</h4>
-                  <p class="m-b-10">Nombre de negocio</p>
+                  <h4 class="m-t-10 m-b-5" id="Nusuario">Nombre de Usuario</h4>
+                  <p class="m-b-10" id="nN">Nombre de negocio</p>
                   <a href="#" class="btn btn-outline-light btn-sm mb-2 btnrosa">Editar perfil</a>
                 </div>
 
@@ -102,20 +102,28 @@
         </div>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active navperfil" id="home-tab" data-bs-toggle="tab" data-bs-target="#Vprodus-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Ver producto</button>
+            <button class="nav-link active navperfil" id="home-tab" data-bs-toggle="tab"
+              data-bs-target="#Vprodus-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+              aria-selected="true">Ver producto</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link navperfil" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Vnegocio-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Ver negocio</button>
+            <button class="nav-link navperfil" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Vnegocio-tab-pane"
+              type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Ver negocio</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link navperfil" id="contact-tab" data-bs-toggle="tab" data-bs-target="#addproduc-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Agregar producto</button>
+            <button class="nav-link navperfil" id="contact-tab" data-bs-toggle="tab"
+              data-bs-target="#addproduc-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane"
+              aria-selected="false">Agregar producto</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link navperfil" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#addNegocio-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" >Aregar Negocio</button>
+            <button class="nav-link navperfil" id="disabled-tab" data-bs-toggle="tab"
+              data-bs-target="#addNegocio-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane"
+              aria-selected="false">Aregar Negocio</button>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="Vprodus-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+          <div class="tab-pane fade show active" id="Vprodus-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0">
             <div class="container m-4">
               <div>
                 <h2 class="mb-4 display-5 text-center">Mis productos</h2>
@@ -123,222 +131,61 @@
               </div>
             </div>
             <div class="container">
-              <div class="row m-5">
-                <div class="col-md-4">
-                  <div class="productosMin">
-                    <div class="card border-0 rounded-0 shadow" style="width: 18rem;">
-                      <img src="img/ejem/comida1.jpg" class="card-img-top rounded-0 imgporducto" alt="..." id="produIMG">
-                      <div class="card-body-item mt-3 mb-2">
-                        <div class="row">
-                          <div class="col-12">
-                            <h3 class="card-title text-center">product title</h3>
-                            <p class="card-text text-center">
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star text-warning"></i>
-                              (123)
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="productosMin">
-                    <div class="card border-0 rounded-0 shadow" style="width: 18rem;">
-                      <img src="img/ejem/comida1.jpg" class="card-img-top rounded-0" alt="..." id="produIMG">
-                      <div class="card-body-item mt-3 mb-3">
-                        <div class="row">
-                          <div class="col-12">
-                            <h3 class="card-title text-center">Product title</h3>
-                            <p class="card-text text-center">
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              (156)
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="productosMin">
-                    <div class="card border-0 rounded-0 shadow" style="width: 18rem;">
-                      <img src="img/ejem/comida3.jpg" class="card-img-top rounded-0" alt="..." id="produIMG">
-                      <div class="card-body-item mt-3 mb-3">
-                        <div class="row">
-                          <div class="col-12">
-                            <h3 class="card-title text-center">Product title</h3>
-                            <p class="card-text text-center">
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              (112)
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          
+              <div class="row" id="productos-container">
+
               </div>
-              <div class="row m-5">
-                <div class="col-md-4">
-                  <div class="productosMin">
-                    <div class="card border-0 rounded-0 shadow" style="width: 18rem;">
-                      <img src="img/ejem/camisa.jpg" class="card-img-top rounded-0" alt="..." id="produIMG">
-                      <div class="card-body-item mt-3 mb-3">
-                        <div class="row">
-                          <div class="col-12">
-                            <h3 class="card-title text-center">Product title</h3>
-                            <p class="card-text text-center">
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-half text-warning"></i>
-                              (103)
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="productosMin">
-                    <div class="card border-0 rounded-0 shadow" style="width: 18rem;">
-                      <img src="img/ejem/images.jfif" class="card-img-top rounded-0" alt="..." id="produIMG">
-                      <div class="card-body-item mt-3 mb-3">
-                        <div class="row">
-                          <div class="col-12">
-                            <h3 class="card-title text-center">Product title</h3>
-                            <p class="card-text text-center">
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-half text-warning"></i>
-                              <i class="bi bi-star text-warning"></i>
-                              (100)
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="productosMin">
-                    <div class="card border-0 rounded-0 shadow" style="width: 18rem;">
-                      <img src="img/ejem/llantas.png" class="card-img-top rounded-0" alt="..." id="produIMG">
-                      <div class="card-body-item mt-3 mb-3">
-                        <div class="row">
-                          <div class="col-12">
-                            <h3 class="card-title text-center">Product title</h3>
-                            <p class="card-text text-center">
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-fill text-warning"></i>
-                              <i class="bi bi-star-half text-warning"></i>
-                              <i class="bi bi-star text-warning"></i>
-                              <i class="bi bi-star text-warning"></i>
-                              (120)
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          
-              </div>
-          
+            </div>
+            <div class="pagination-container d-flex justify-content-center mt-3">
+              <nav>
+                <ul class="pagination" id="pagination">
+                </ul>
+              </nav>
             </div>
           </div>
+
           <div class="tab-pane fade" id="addproduc-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
             <div class="container">
               <div class="row">
-                  <div class="col-md-12 mb-4">
-                    <div>
-                      <h2 class="mb-4 display-5 text-center">Agregar Producto</h2>
-                      <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
-                    </div>
-                      <form id="productForm" class="mb-5">
-                          <div class="mb-3">
-                              <input type="text" class="form-control" id="productName" placeholder="Nombre del producto" required>
-                          </div>
-                          <div class="mb-3">
-                              <input type="number" class="form-control" id="productPrice" placeholder="Precio" step="0.01" required>
-                          </div>
-                          <div class="mb-3">
-                              <textarea class="form-control" id="productDescription" placeholder="Descripción" rows="3"></textarea>
-                          </div>
-                          <div class="mb-3">
-                              <label for="productImage" class="form-label">Imagen del producto</label>
-                              <input type="file" class="form-control" id="productImage" accept="image/*">
-                          </div>
-                          <button type="submit" class="btn btn-primary w-100">Agregar Producto</button>
-                      </form>
+                <div class="col-md-12 mb-4">
+                  <div>
+                    <h2 class="mb-4 display-5 text-center">Agregar Producto</h2>
+                    <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
                   </div>
-              </div>
-          </div>
-          </div>
-          <div class="tab-pane fade" id="Vnegocio-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
-          <div class="tab-pane fade" id="addNegocio-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-            <div class="container">
-              <div class="row">
-                  <div class="col-md-12 mb-4">
-                    <div>
-                      <h2 class="mb-4 display-5 text-center">Agregar Negocio</h2>
-                      <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+                  <form id="productForm" class="mb-5" enctype="multipart/form-data">
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="productName" placeholder="Nombre del producto"
+                        required>
                     </div>
-                      <form id="productForm" class="mb-5">
-                          <div class="mb-3">
-                              <input type="text" class="form-control" id="negocioName" placeholder="Nombre del Negocio" required>
-                          </div>
-                          <div class="mb-3">
-                            <label for="Hora de Apertura">Hora de Apertura:</label>
-                            <input type="time" class="form-control" value="10:05 AM" />
-                          </div>
-                          <label for="Hora de Cierre">Hora de Cierre:</label>
-                          <div class="mb-3">
-                            <input type="time" class="form-control" value="10:05 AM" />
-                          </div>
-                          <div class="mb-3">
-                            <label for="sector">Categoria:</label>
-                            <select id="categoria" name="categoria" required>
-                              <option value="">Restaurantes</option>
-                              <option value="tecnologia">Tecnología</option>
-                              <option value="salud">Taller</option>
-                              <option value="educacion">Barberias o sala de belleza</option>
-                              <option value="finanzas">Tiendas de variedades</option>
-                              <option value="otro">Otro</option>
-                          </select>
-                        </div>
-                        <div class="mb-3">
-                          <textarea class="form-control" id="negocioUbicacion" placeholder="Ubicacion" rows="2"></textarea>
-                      </div>
-                          <div class="mb-3">
-                              <textarea class="form-control" id="negocioDescription" placeholder="Descripción" rows="3"></textarea>
-                          </div>
-                          <div class="mb-3">
-                              <label for="negocioImage" class="form-label">Imagen del Negocio</label>
-                              <input type="file" class="form-control" id="negocioImage" accept="image/*">
-                          </div>
-                          <button type="submit" class="btn btn-primary w-100">Agregar Negocio</button>
-                      </form>
-                  </div>
+                    <div class="mb-3">
+                      <input type="number" class="form-control" id="productPrice" placeholder="Precio" step="0.01"
+                        required>
+                    </div>
+                    <label for="sector">Categoria:</label>
+                    <select id="categoria" name="categoria" required>
+                      <option value="Comida">Comida</option>
+                      <option value="Ropa">Ropa</option>
+                      <option value="Tecnologia">Tecnologia</option>
+                      <option value="Autos">Autos</option>
+                      <option value="Barberias y saloness">Barberias y salones</option>
+                    </select>
+                    <div class="mb-3">
+                      <textarea class="form-control" id="productDescription" placeholder="Descripción"
+                        rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="productImage" class="form-label">Imagen del producto</label>
+                      <input type="file" class="form-control" id="productImage" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Agregar Producto</button>
+                  </form>
+                </div>
               </div>
+            </div>
           </div>
+          <div class="tab-pane fade" id="Vnegocio-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+            ...</div>
+          <div class="tab-pane fade" id="addNegocio-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
+            tabindex="0">
           </div>
         </div>
       </div>
@@ -411,7 +258,11 @@
       © 2024 Copyright:
       <a class="text-white" href="https://mdbootstrap.com/">GRUPO LIC</a>
     </div>
-
+    <script src="js/perfil.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/Agg_producto.js"></script>
+    <script src="js/tarjetas.js"></script>
+    <script src="js/crear_tarjetas.js"></script>
   </footer>
 </body>
 

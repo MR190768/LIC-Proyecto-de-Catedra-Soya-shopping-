@@ -1,5 +1,5 @@
 
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registroForm');
     const nombreInput = document.getElementById('nombre');
     const emailInput = document.getElementById('email');
@@ -18,6 +18,7 @@
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        const imagenusuario = document.getElementById('usertImage').files[0]
 
         // Reset error messages
         nombreError.textContent = '';
@@ -54,6 +55,11 @@
         const correo = emailInput.value;
         const password = passwordInput.value;
 
+        var formdata= new FormData();
+        formdata.append("Name",nombre);
+        formdata.append("imagen",imagenusuario)
+
+
         try {
             const response = await fetch('http://localhost:3001/soyashopping/register/user', {
                 method: "POST",
@@ -73,7 +79,12 @@
 
             if (response.ok) {
                 alert(data.message);
-                window.location.href = 'login_usuario.html'; // Redirige al login después de un registro exitoso
+                localStorage.setItem("user",nombre)
+                const responseimg = await fetch('http://localhost:3002/img/user', {
+                    method: "POST",
+                    body: formdata
+                    });
+                window.location.href = "pagina_reg_negocio.html"; // Redirige al login después de un registro exitoso
             } else {
                 alert(data.message);
             }

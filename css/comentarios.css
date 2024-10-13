@@ -1,0 +1,150 @@
+
+@media(min-width:568px){
+    .end{
+        margin-left: auto;
+    }
+}
+
+@media(max-width:768px){
+    #post{
+        width: 100%;
+    }
+}
+#clicked{
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: center;
+    width: 100%;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px; 
+}
+
+#profile{
+    background-color: unset;
+    
+} 
+
+#post{
+    margin: 10px;
+    padding: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #380720;
+    border-color: c8809a;
+    color: wheat;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+    width: 50%;
+}
+
+.comments{
+    margin-top: 5%;
+    margin-left: 20px;
+}
+
+.darker{
+    border: 1px solid #7f214b;
+    background-color: #c8809a;
+    float: right;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.comment{
+    border: 1px solid #c8809a;
+    background-color: #7f214b;
+    float: left;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+    
+}
+.comment h4,.comment span,.darker h4,.darker span{
+    display: inline;
+}
+
+.comment p,.comment span,.darker p,.darker span{
+    color: white;
+}
+
+h1,h4{
+    color: white;
+    font-weight: bold;
+}
+label{
+    color: rgb(212, 208, 208);
+}
+
+#align-form{
+    margin-top: 20px;
+}
+.form-group p a{
+    color: white;
+}
+
+#checkbx{
+    background-color: #7f214b;
+}
+
+.form-group input,.form-group textarea{
+    background-color: white;
+    border: 1px solid #c8809a;
+    border-radius: 12px;
+}
+
+.formComment{
+    border: 1px solid #c8809a;
+    background-color: #7f214b;;
+    border-radius: 5px;
+    padding: 20px;
+ }
+
+ .rating {
+    display: flex;
+           margin-top: -10px;
+       flex-direction: row-reverse;
+       margin-left: -4px;
+           float: left;
+   }
+   
+   .rating>input {
+       display: none
+   }
+   
+   .rating>label {
+           position: relative;
+       width: 19px;
+       font-size: 25px;
+       color: #FFDF00;
+       cursor: pointer;
+   }
+   
+   .rating>label::before {
+       content: "\2605";
+       position: absolute;
+       opacity: 0
+   }
+   
+   .rating>label:hover:before,
+   .rating>label:hover~label:before {
+       opacity: 1 !important
+   }
+   
+   .rating>input:checked~label:before {
+       opacity: 1
+   }
+   
+   .rating:hover>input:checked~label:before {
+       opacity: 0.4
+   }
+   
