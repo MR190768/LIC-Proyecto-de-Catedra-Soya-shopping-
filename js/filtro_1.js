@@ -1,4 +1,6 @@
-
+const urlParams = new URLSearchParams(window.location.search);
+const productoName= urlParams.get('busc')
+var fprodus=[];
 async function CargarProductosf1(){
     try {
         const response = await fetch('http://localhost:3001/soyashopping/read/info/produ/name', {
@@ -14,7 +16,6 @@ async function CargarProductosf1(){
         const data = await response.json();
     
         if (response.ok) {
-            console.log(data);
             tamano=Object.keys(data).length;
             for(i=0;i<tamano;i++){
                 rutaOriginal=data[i].ImagenP;
@@ -27,7 +28,7 @@ async function CargarProductosf1(){
                     calificacion: 3, // Pueden ser de 0 a 5 estrellas
                     totalReviews: 123
                   };
-                  productos.push(datosTarjetas);
+                  fprodus.push(datosTarjetas);
             }      
         } else {
             alert(data.message);

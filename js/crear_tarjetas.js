@@ -1,8 +1,9 @@
 tarjetas(6);
-window.addEventListener('load', () => {
+var PerProductos=[];
+window.addEventListener('load',async () => {
     console.log('Todos los recursos han sido cargados');
-    CargarProductos();
-    inicializarPaginacion();
+    await CargarProductos();
+    await inicializarPaginacion(PerProductos);
 });
 
 async function CargarProductos(){
@@ -32,19 +33,18 @@ async function CargarProductos(){
                     calificacion: 3, // Pueden ser de 0 a 5 estrellas
                     totalReviews: 123
                   };
-                  productos.push(datosTarjetas);
+                    PerProductos.push(datosTarjetas);
             }      
         } else {
-            alert(data.message);
+            console.log(data.message);
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('Hubo un error al procesar su solicitud');
     }
 }
 
  document.getElementById("home-tab").addEventListener("click",function(){
-    inicializarPaginacion();
+    inicializarPaginacion(PerProductos);
  })
 
  

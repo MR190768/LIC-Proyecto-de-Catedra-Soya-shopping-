@@ -1,10 +1,10 @@
-const urlParams = new URLSearchParams(window.location.search);
-const productoName= urlParams.get('busc')
 
-
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
     console.log('Todos los recursos han sido cargados');
-    tarjetas(12);
-    CargarProductosf1();
-    inicializarPaginacion();
+    await tarjetas(12);
+    await CargarProductosf1();
+    await inicializarPaginacion(fprodus);
 });
+
+
+

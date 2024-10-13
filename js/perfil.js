@@ -27,11 +27,11 @@ const carga = async function(){
             iper.src="APIRest/"+rutaCorregida;
 
         } else {
-            alert(data.message);
+            console.log(data.message);
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('Hubo un error al procesar su solicitud');
+
     }
 }
 

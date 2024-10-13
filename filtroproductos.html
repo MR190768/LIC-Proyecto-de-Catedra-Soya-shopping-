@@ -10,9 +10,9 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="css/filtro.css">
   <link rel="stylesheet" href="css/estilosIndice.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="stylesheet" href="css/filtro.css">
 
   <title>Perfil</title>
 </head>
@@ -64,8 +64,8 @@
           </li>
           <li class="nav-item">
             <form class="d-flex" id="buscador" role="search">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="bustext">
+              <button class="btn btn-outline-light" type="submit" id="buscar"><i class="bi bi-search"></i></button>
             </form>
           </li>
         </ul>
@@ -74,31 +74,57 @@
       </div>
     </div>
   </nav>
+  <br>
+  <br>
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-4">
         <div class="py-3">
           <h5 class="font-weight-bold">Categoria</h5>
           <form class="brand">
-              <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Comida <input type="checkbox" value="1"> <span class="check"></span> </label> </div>
-              <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Ropa <input type="checkbox" value="2"> <span class="check"></span> </label> </div>
-              <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Tecnologia <input type="checkbox" value="3"> <span class="check"></span> </label> </div>
-              <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Automovilismo <input type="checkbox" value="4"> <span class="check"></span> </label> </div>
-              <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Barberias y salones de belleza <input type="checkbox" value="5"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Comida <input type="checkbox"
+                  value="1"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Ropa <input type="checkbox"
+                  value="2"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Tecnologia <input
+                  type="checkbox" value="3"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Automovilismo <input
+                  type="checkbox" value="4"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Barberias y salones de belleza
+                <input type="checkbox" value="5"> <span class="check"></span> </label> </div>
           </form>
-      </div>
-      <div class="py-3">
+        </div>
+        <div class="py-3">
           <h5 class="font-weight-bold">Rating</h5>
           <form class="rating">
-              <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <input type="radio" value="5" name="rating"> <span class="check"></span> </label> </div>
-              <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <input type="radio" value="4" name="rating"> <span class="check"></span> </label> </div>
-              <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <input type="radio" value="3" name="rating"> <span class="check"></span> </label> </div>
-              <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <input type="radio" value="2" name="rating"> <span class="check"></span> </label> </div>
-              <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <input type="radio" value="1" name="rating"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <input type="radio" value="5"
+                  name="rating"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                  class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <input type="radio"
+                  value="4" name="rating"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                  class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <input
+                  type="radio" value="3" name="rating"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                  class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span
+                  class="far fa-star px-1 text-muted"></span> <input type="radio" value="2" name="rating"> <span
+                  class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span
+                  class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <span
+                  class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span
+                  class="far fa-star px-1 text-muted"></span> <input type="radio" value="1" name="rating"> <span
+                  class="check"></span> </label> </div>
           </form>
+        </div>
       </div>
       <div class="col-sm-12 col-md-8">
         <div class="row" id="productos-container">
+          <h1>No hubo resultados</h1>
 
         </div>
       </div>
@@ -107,10 +133,6 @@
           <ul class="pagination" id="pagination">
           </ul>
         </nav>
-      </div>
-
-      </div>
-        
       </div>
     </div>
   </div>
@@ -179,6 +201,7 @@
   <script src="js/tarjetas.js"></script>
   <script src="js/filtro_1.js"></script>
   <script src="js/cargaFiltro.js"></script>
+  <script src="js/SearcBar.js"></script>
 </body>
 
 </html>

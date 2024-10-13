@@ -4,7 +4,6 @@ window.addEventListener('load', () => {
     Cargarcomentarios();
 });
 
-
 const urlParams = new URLSearchParams(window.location.search);
 const productoId = parseInt(urlParams.get('id'));
 

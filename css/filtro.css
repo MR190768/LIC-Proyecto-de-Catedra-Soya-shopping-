@@ -307,3 +307,19 @@ img{
         clear: both;
     }
 }
+
+.productosMin {
+    transition: all linear .2s;
+    width: 200px;
+    display: flex;
+  }
+
+  #produIMG{
+    height: 112px ;
+  }
+
+  .productosMin:hover,
+  .productosMin:active {
+    box-shadow: .2em .5em .5em rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
+  }

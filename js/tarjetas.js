@@ -1,14 +1,14 @@
 
 var productosPorPagina
 let paginaActual=1;
-var productos=[];
+
 const container = document.getElementById('productos-container');
 
 function tarjetas(npaginas){
     productosPorPagina=npaginas;
 };
 
-function mostrarProductos(pagina) {
+function mostrarProductos(pagina,productos) {
     const inicio = (pagina - 1) * productosPorPagina;
     const fin = inicio + productosPorPagina;
     const productosPagina = productos.slice(inicio, fin);
@@ -20,7 +20,7 @@ function mostrarProductos(pagina) {
       });
 }
 
-function crearPaginacion(totalPaginas) {
+function crearPaginacion(totalPaginas,productos) {
     const paginacionUl = document.getElementById('pagination');
     paginacionUl.innerHTML = ''; // Limpiar la paginación existente
 
@@ -37,7 +37,7 @@ function crearPaginacion(totalPaginas) {
       a.addEventListener('click', function(e) {
         e.preventDefault();
         paginaActual = i;
-        mostrarProductos(paginaActual);
+        mostrarProductos(paginaActual,productos);
         crearPaginacion(totalPaginas);
       });
 
@@ -45,15 +45,6 @@ function crearPaginacion(totalPaginas) {
       paginacionUl.appendChild(li);
     }
   }
-
-  function inicializarPaginacion() {
-    const totalPaginas = Math.ceil(productos.length / productosPorPagina);
-    crearPaginacion(totalPaginas);
-    mostrarProductos(paginaActual);
-    console.log(productos)
-  }
-
-
 
 function crearTarjeta(producto) {
     // Crear los elementos del DOM
@@ -125,4 +116,10 @@ function crearTarjeta(producto) {
 
     // Agregar la tarjeta al contenedor
     container.appendChild(colDiv);
+  }
+
+  function inicializarPaginacion(productos) {
+    const totalPaginas = Math.ceil(productos.length / productosPorPagina);
+    crearPaginacion(totalPaginas,productos);
+    mostrarProductos(paginaActual,productos);
   }

@@ -168,6 +168,27 @@ app.post("/soyashopping/read/info/produ/name", (req,res)=>{
 
 });
 
+//Metodo POST:recibe un query de consulta y responde con el resultado no verifica el usuario
+app.post("/soyashopping/read/info/produ", (req,res)=>{
+    try{
+        const datosReq=req.body;
+        var sqlLeer=DBconexion.query("SELECT * FROM producto WHERE id_producto=?",[datosReq.id],function(error, results, fields){
+            if(error){
+                console.log(error)
+                res.status(500).send({status:"FAIL",message:"Servidor no puedo procesar la solicitud"});
+            }
+            else{
+                res.json(results);
+            }
+        })
+    }
+    catch(error){
+        console.log(error)
+        res.status(500).send({status:"FAIL",message:"El servidor no pudo procesar su solicitud"});
+    }
+
+});
+
 app.post("/soyashopping/read/info/resena", (req,res)=>{
     try{
         const datosReq=req.body;

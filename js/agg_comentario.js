@@ -32,6 +32,7 @@ form.addEventListener('submit', async (e) => {
             alert(data.message);
             nameR.value = "";
             resena.value = "";
+            Cargarcomentarios();
 
         } else {
             alert(data.message);

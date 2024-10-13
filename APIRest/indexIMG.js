@@ -65,6 +65,7 @@ app.post("/img/user", uploadUser.single('imagen'), (req, res) => {
                     usuarioName: Name,
                     ImagenP: req.file.path
                 };
+                console.log(req.file.path)
 
                 var sqlInser = DBconexion.query("UPDATE usuario SET ImagenP= ? WHERE usuarioName= ?", [nuevoUsuario.ImagenP,nuevoUsuario.usuarioName], function (error, results, fields) {
                     if (error) {
@@ -79,7 +80,7 @@ res.status(200).send({ status: "OK", message: "Se Subio imagen" });
 app.post("/img/negocio", uploadNego.single('imagen'), (req, res) => {
     const { Name } = req.body;
             const nuevoNegocio = {
-                usuarioNegocio: Name,
+                negocioName: Name,
                 ImagenP: req.file.path,
             };
             var sqlInser = DBconexion.query("UPDATE negocio SET Imagen= ? WHERE nombreN= ?", [nuevoNegocio.ImagenP,nuevoNegocio.negocioName], function (error, results, fields) {
@@ -97,8 +98,6 @@ app.post("/img/produ", uploadProd.single('imagen'), (req, res) => {
                 idP: id,
                 ImagenP: req.file.path
             };
-            
-
             var sqlInser = DBconexion.query("UPDATE producto SET ImagenP=? WHERE id_producto=? ", [nuevoproducto.ImagenP,nuevoproducto.idP], function (error, results, fields) {
                 if (error) {
                     console.log(error)

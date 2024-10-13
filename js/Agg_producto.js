@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     method: "POST",
                     body: formdata
                     })
-                window.location.href = 'perfil.html'; // Redirige al login después de un registro exitoso
+                window.location.href = '/perfil.html'; // Redirige al login después de un registro exitoso
             } else {
                 alert(data.message);
             }
