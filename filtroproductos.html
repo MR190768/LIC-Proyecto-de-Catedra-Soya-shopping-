@@ -69,8 +69,8 @@
             </form>
           </li>
         </ul>
-        <button class="btn btn-outline-light btnrosa " type="submit" id="logout">CERRAR SESION</i></button>
-        <button class="btn btn-outline-light " type="submit">PERFIL</i></button>
+        <button class="btn btn-outline-light btnrosa" type="submit" id="logout">CERRAR SESION</button>
+        <button class="btn btn-outline-light" type="submit" id="profile">PERFIL</button>
       </div>
     </div>
   </nav>
@@ -78,20 +78,32 @@
   <br>
   <div class="container">
     <div class="row">
+      <div class="col"><button class="btn btn-outline-light btnrosa" id="Afiltro">Aplicar filtros</button></div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-12 col-md-4"> <label class="options">Most Popular <input type="radio" name="radio" value="pupular" checked> <span
+            class="checkmark"></span> </label> <label class="options">Cheapest <input type="radio" name="radio"  value="barato">
+          <span class="checkmark"></span> </label> </div>
+      <div class="col-sm-12 col-md-4 offset-md-4"> <span class="btn text-success" id="grid"> <span
+            class="fas fa-th px-md-2 px-1"></span><span>Grid view</span> </span> <span class="btn" id="list"> <span
+            class="fas fa-list-ul"></span><span class="px-md-2 px-1">List view</span></div>
+    </div>
+    <div class="row">
       <div class="col-sm-12 col-md-4">
         <div class="py-3">
           <h5 class="font-weight-bold">Categoria</h5>
           <form class="brand">
             <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Comida <input type="checkbox"
-                  value="1"> <span class="check"></span> </label> </div>
+                  value="1" name="cat"> <span class="check"></span> </label> </div>
             <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Ropa <input type="checkbox"
-                  value="2"> <span class="check"></span> </label> </div>
+                  value="2" name="cat"> <span class="check"></span> </label> </div>
             <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Tecnologia <input
-                  type="checkbox" value="3"> <span class="check"></span> </label> </div>
+                  type="checkbox" value="3" name="cat"> <span class="check"></span> </label> </div>
             <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Automovilismo <input
-                  type="checkbox" value="4"> <span class="check"></span> </label> </div>
+                  type="checkbox" value="4" name="cat"> <span class="check"></span> </label> </div>
             <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Barberias y salones de belleza
-                <input type="checkbox" value="5"> <span class="check"></span> </label> </div>
+                <input type="checkbox" value="5" name="cat"> <span class="check"></span> </label> </div>
           </form>
         </div>
         <div class="py-3">
@@ -99,11 +111,11 @@
           <form class="rating">
             <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
                   class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
-                  class="fas fa-star"></span> <span class="fas fa-star"></span> <input type="radio" value="5"
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <input type="checkbox" value="5"
                   name="rating"> <span class="check"></span> </label> </div>
             <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span
                   class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
-                  class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <input type="radio"
+                  class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <input type="checkbox"
                   value="4" name="rating"> <span class="check"></span> </label> </div>
             <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
                   class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
@@ -112,12 +124,12 @@
             <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
                   class="fas fa-star"></span> <span class="fas fa-star"></span> <span
                   class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span
-                  class="far fa-star px-1 text-muted"></span> <input type="radio" value="2" name="rating"> <span
+                  class="far fa-star px-1 text-muted"></span> <input type="checkbox" value="2" name="rating"> <span
                   class="check"></span> </label> </div>
             <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span
                   class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <span
                   class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span
-                  class="far fa-star px-1 text-muted"></span> <input type="radio" value="1" name="rating"> <span
+                  class="far fa-star px-1 text-muted"></span> <input type="checkbox" value="1" name="rating"> <span
                   class="check"></span> </label> </div>
           </form>
         </div>
@@ -202,6 +214,7 @@
   <script src="js/filtro_1.js"></script>
   <script src="js/cargaFiltro.js"></script>
   <script src="js/SearcBar.js"></script>
+  <script src="js/filtro_2.js"></script>
 </body>
 
 </html>

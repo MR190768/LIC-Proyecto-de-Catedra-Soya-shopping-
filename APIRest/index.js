@@ -168,6 +168,86 @@ app.post("/soyashopping/read/info/produ/name", (req,res)=>{
 
 });
 
+app.post("/soyashopping/read/info/produ/filtro", (req,res)=>{
+    try{
+        const datosReq=req.body;
+        var calificaciones="";
+        var categoria="";
+        var consutla="SELECT * FROM productosP";
+
+        if(datosReq.calfi.length>0 && datosReq.cate.length>0){
+            for(var i=0;i<datosReq.calfi.length;i++){
+                if(i==datosReq.calfi.length-1){
+                    calificaciones=calificaciones+"promedio"+datosReq.calfi[i];
+                }
+                else{
+                    calificaciones=calificaciones+"promedio"+datosReq.calfi[i]+" OR ";
+                }      
+            }
+            for(var i=0;i<datosReq.cate.length;i++){
+                if(i==datosReq.cate.length-1){
+                    categoria=categoria+"id_cat="+datosReq.cate[i];
+                }
+                else{
+                    categoria=categoria+"id_cat="+datosReq.cate[i]+" OR ";
+                }      
+            }
+            consutla=consutla+"("+categoria+") "+"AND "+"("+calificaciones+")"
+
+            console.log(consutla)
+        }
+        else{
+            if(datosReq.calfi.length>0){
+                for(var i=0;i<datosReq.calfi.length;i++){
+                    if(i==datosReq.calfi.length-1){
+                        calificaciones=calificaciones+"promedio="+datosReq.calfi[i];
+                    }
+                    else{
+                        calificaciones=calificaciones+"promedio="+datosReq.calfi[i]+" OR ";
+                    }      
+                }
+                consutla=consutla+" WHERE "+calificaciones;
+            }
+            else{
+                for(var i=0;i<datosReq.cate.length;i++){
+                    if(i==datosReq.cate.length-1){
+                        categoria=categoria+"id_cat="+datosReq.cate[i];
+                    }
+                    else{
+                        categoria=categoria+"id_cat="+datosReq.cate[i]+" OR ";
+                    }      
+                }
+                consutla=consutla+" WHERE "+categoria;
+            }
+
+            if(datosReq.tipo=="popular"){
+                consutla=consutla+" ORDER BY promedio DESC"
+            }
+            else{
+                consutla=consutla+" ORDER BY precio ASC"
+            }
+        }
+
+
+        var sqlLeer=DBconexion.query(consutla,function(error, results, fields){
+            if(error){
+                console.log(error)
+                res.status(500).send({status:"FAIL",message:"Servidor no puedo procesar la solicitud"});
+            }
+            else{
+                res.json(results);
+            }
+        })
+    }
+    catch(error){
+        console.log(error)
+        res.status(500).send({status:"FAIL",message:"El servidor no pudo procesar su solicitud"});
+    }
+
+
+
+});
+
 //Metodo POST:recibe un query de consulta y responde con el resultado no verifica el usuario
 app.post("/soyashopping/read/info/produ", (req,res)=>{
     try{
