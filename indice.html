@@ -54,20 +54,25 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link active text-white navBtn" aria-current="page" href="#">Home</a>
+            <a class="nav-link user-button" id="userButton">
+                <i class="bi bi-person-circle"></i> Usuario
+            </a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white navBtn" aria-current="page" href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white navBtn" href="#">Link</a>
+            <a class="nav-link text-white navBtn" href="VerProductos.html">Explorar</a>
           </li>
           <li class="nav-item">
             <form class="d-flex" id="buscador" role="search">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="bustext">
               <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
             </form>
           </li>
         </ul>
-        <button class="btn btn-outline-light btnrosa " type="submit">REGISTRARSE</i></button>
-        <button class="btn btn-outline-light " type="submit">INICIAR SESION</i></button>
+        <form action="pagina_reg_usuario.html"><input class="btn btn-outline-light btnrosa " type="submit" value="REGISTRARSE"></form>
+        <form action="login_usuario.html"><input class="btn btn-outline-light " type="submit" value="INICIAR SESION"></form>
       </div>
     </div>
   </nav>
@@ -352,69 +357,35 @@
         <div class="row">
 
           <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Footer Content</h5>
+            <h5 class="text-uppercase"></h5>
 
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-              molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-              voluptatem veniam, est atque cumque eum delectus sint!
+            <p>Conectamos emprendedores locales con compradores conscientes para crear una economía local más fuerte.
+              ¡Gracias por visitarnos!
             </p>
+            
           </div>
-
-
-
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-
-
-
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-0">Links</h5>
-
+          <div class="col-md-3">
+            <h5>Contacto</h5>
             <ul class="list-unstyled">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
+                <li><i class="bi bi-envelope me-2"></i> info@soyashopping.com</li>
+                <li><i class="bi bi-telephone me-2"></i> (503) 78745629</li>
             </ul>
-          </div>
+        </div>
 
         </div>
+        
 
       </div>
 
 
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2024 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">GRUPO LIC</a>
+       <p>&copy; 2024 Soya Shopping. Todos los derechos reservados.</p>
+      <!--  <a class="text-white" href="https://mdbootstrap.com/">GRUPO LIC</a>--> 
       </div>
 
     </footer>
   </footer>
+  <script src="js/SearcBar.js"></script>
 </body>
 
 </html>

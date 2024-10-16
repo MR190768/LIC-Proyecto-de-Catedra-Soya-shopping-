@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registro.css">
+    <title>Registro de Emprendedor</title>
+
+</head>
+<body>
+    <div class="banner">
+        ¡Bienvenido al registro de Emprendedores !
+    </div>
+    <div class="logo-container">
+       <img src="img/logo.png" alt="Logo de la empresa" class="logo">
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <h1>Registro de Negocio</h1>
+            <form id="negocioForm" class="mb-5" enctype="multipart/form-data" >
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="negocioName" placeholder="Nombre del Negocio" required>
+                </div>
+                <div class="mb-3">
+                  <label for="Hora de Apertura">Hora de Apertura:</label>
+                  <input type="time" class="form-control" value="10:05 AM" id="horaAbre"/>
+                </div>
+                <label for="Hora de Cierre">Hora de Cierre:</label>
+                <div class="mb-3">
+                  <input type="time" class="form-control" value="10:05 AM" id="horaCierre"/>
+                </div>
+                <div class="mb-3">
+                  <label for="sector">Servicio:</label>
+                  <select id="servicio" name="Servicio" required>
+                    <option value="Bienes">Bienes</option>
+                    <option value="Servicios">Servicios</option>
+                    <option value="Bienes y servicios">Bienes y servicios</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" id="negocioUbicacion" placeholder="Ubicacion" rows="2"></textarea>
+            </div>
+                <div class="mb-3">
+                    <textarea class="form-control" id="negocioDescription" placeholder="Descripción" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="negocioImage" class="form-label">Imagen del Negocio</label>
+                    <input type="file" class="form-control" id="negocioImg" accept="image/*">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Agregar Negocio</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/Agg_negocio.js"></script>
+</body>
+</html>
