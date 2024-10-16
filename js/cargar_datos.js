@@ -24,7 +24,7 @@ async function carga() {
             let rutaCorregida = rutaOriginal.replace(/\\/g, '/');
             imagen.src = "APIRest/" + rutaCorregida;
             descripcion.innerText = data[0].Descripcion;
-            pName.innerText = data[0].id_negocio;
+            pName.innerText = data[0].nombreN;
             price.innerText = "$ " + data[0].precio
 
         } else {

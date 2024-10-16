@@ -25,8 +25,8 @@ async function CargarProductosf1(){
                     imagenSrc: "APIRest/"+rutaCorregida,
                     altText: 'Imagen de producto',
                     titulo: data[i].NombreProd,
-                    calificacion: 3, // Pueden ser de 0 a 5 estrellas
-                    totalReviews: 123
+                    calificacion: data[i].promedio, // Pueden ser de 0 a 5 estrellas
+                    price: data[i].precio
                   };
                   fprodus.push(datosTarjetas);
             }      

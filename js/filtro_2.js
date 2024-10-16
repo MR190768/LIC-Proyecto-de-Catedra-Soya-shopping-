@@ -1,15 +1,16 @@
-const f2produs=[];
-
-const btnfiltro=document.getElementById("Afiltro").addEventListener("click",function(){
-    cargaFiltros();
+let f2produs=[];
+const btnfiltro=document.getElementById("Afiltro").addEventListener("click",async function(){
+    
+    await tarjetas(12);
+    await cargaFiltros()
+    await inicializarPaginacion(f2produs);
 })
 
 async function cargaFiltros() {
+    f2produs=[];
     const categoria = document.querySelectorAll('input[name="cat"]:checked');
     const rating = document.querySelectorAll('input[name="rating"]:checked');
     const Fradio= document.querySelector('input[name="radio"]:checked').value;
-    
- 
     try {
         const response = await fetch('http://localhost:3001/soyashopping/read/info/produ/filtro', {
             method: "POST",
@@ -19,13 +20,16 @@ async function cargaFiltros() {
             body: JSON.stringify({
                 calfi:arrayFiltros(rating),
                 cate:arrayFiltros(categoria),
-                tipo:Fradio
+                tipo:Fradio,
+                name:productoName
             })
         });
     
         const data = await response.json();
+        console.log(data)
     
         if (response.ok) {
+
             tamano=Object.keys(data).length;
             for(i=0;i<tamano;i++){
                 rutaOriginal=data[i].ImagenP;
@@ -35,8 +39,8 @@ async function cargaFiltros() {
                     imagenSrc: "APIRest/"+rutaCorregida,
                     altText: 'Imagen de producto',
                     titulo: data[i].NombreProd,
-                    calificacion: 3, // Pueden ser de 0 a 5 estrellas
-                    totalReviews: 123
+                    calificacion: data[i].promedio, // Pueden ser de 0 a 5 estrellas
+                    price: data[i].precio
                   };
                   f2produs.push(datosTarjetas);
             }      

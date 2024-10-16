@@ -151,7 +151,7 @@ app.post("/soyashopping/register/resen", (req,res)=>{
 app.post("/soyashopping/read/info/produ/name", (req,res)=>{
     try{
         const datosReq=req.body;
-        var sqlLeer=DBconexion.query("SELECT * FROM producto WHERE NombreProd LIKE '%"+datosReq.name+"%'",function(error, results, fields){
+        var sqlLeer=DBconexion.query("SELECT * FROM productosP WHERE NombreProd LIKE '%"+datosReq.name+"%'",function(error, results, fields){
             if(error){
                 console.log(error)
                 res.status(500).send({status:"FAIL",message:"Servidor no puedo procesar la solicitud"});
@@ -173,15 +173,15 @@ app.post("/soyashopping/read/info/produ/filtro", (req,res)=>{
         const datosReq=req.body;
         var calificaciones="";
         var categoria="";
-        var consutla="SELECT * FROM productosP";
+        var consutla="SELECT * FROM productosP ";
 
         if(datosReq.calfi.length>0 && datosReq.cate.length>0){
             for(var i=0;i<datosReq.calfi.length;i++){
                 if(i==datosReq.calfi.length-1){
-                    calificaciones=calificaciones+"promedio"+datosReq.calfi[i];
+                    calificaciones=calificaciones+"promedio="+datosReq.calfi[i];
                 }
                 else{
-                    calificaciones=calificaciones+"promedio"+datosReq.calfi[i]+" OR ";
+                    calificaciones=calificaciones+"promedio="+datosReq.calfi[i]+" OR ";
                 }      
             }
             for(var i=0;i<datosReq.cate.length;i++){
@@ -192,9 +192,8 @@ app.post("/soyashopping/read/info/produ/filtro", (req,res)=>{
                     categoria=categoria+"id_cat="+datosReq.cate[i]+" OR ";
                 }      
             }
-            consutla=consutla+"("+categoria+") "+"AND "+"("+calificaciones+")"
+            consutla=consutla+" WHERE "+"("+categoria+") "+"AND "+"("+calificaciones+")"
 
-            console.log(consutla)
         }
         else{
             if(datosReq.calfi.length>0){
@@ -208,7 +207,7 @@ app.post("/soyashopping/read/info/produ/filtro", (req,res)=>{
                 }
                 consutla=consutla+" WHERE "+calificaciones;
             }
-            else{
+            else if(datosReq.cate.length>0){
                 for(var i=0;i<datosReq.cate.length;i++){
                     if(i==datosReq.cate.length-1){
                         categoria=categoria+"id_cat="+datosReq.cate[i];
@@ -218,17 +217,18 @@ app.post("/soyashopping/read/info/produ/filtro", (req,res)=>{
                     }      
                 }
                 consutla=consutla+" WHERE "+categoria;
-            }
-
-            if(datosReq.tipo=="popular"){
-                consutla=consutla+" ORDER BY promedio DESC"
+            }else if(datosReq.name!=undefined){
+                consutla=consutla+" WHERE NombreProd="+categoria;
             }
             else{
-                consutla=consutla+" ORDER BY precio ASC"
+                if(datosReq.tipo=="popular"){
+                    consutla=consutla+" ORDER BY promedio DESC"
+                }
+                else{
+                    consutla=consutla+" ORDER BY precio ASC"
+                }
             }
         }
-
-
         var sqlLeer=DBconexion.query(consutla,function(error, results, fields){
             if(error){
                 console.log(error)
@@ -252,7 +252,7 @@ app.post("/soyashopping/read/info/produ/filtro", (req,res)=>{
 app.post("/soyashopping/read/info/produ", (req,res)=>{
     try{
         const datosReq=req.body;
-        var sqlLeer=DBconexion.query("SELECT * FROM producto WHERE id_producto=?",[datosReq.id],function(error, results, fields){
+        var sqlLeer=DBconexion.query("SELECT * FROM productosD WHERE id_producto=?",[datosReq.id],function(error, results, fields){
             if(error){
                 console.log(error)
                 res.status(500).send({status:"FAIL",message:"Servidor no puedo procesar la solicitud"});

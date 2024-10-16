@@ -82,6 +82,10 @@ function crearTarjeta(producto) {
     titleH3.classList.add('card-title', 'text-center');
     titleH3.textContent = producto.titulo;
 
+    const priceH4 = document.createElement('h4');
+    priceH4.classList.add('text-center');
+    priceH4.textContent = "$ "+producto.price;
+
     const cardTextP = document.createElement('p');
     cardTextP.classList.add('card-text', 'text-center');
     
@@ -96,12 +100,9 @@ function crearTarjeta(producto) {
       cardTextP.appendChild(starIcon);
     }
     
-    const ratingSpan = document.createElement('span');
-    ratingSpan.textContent = ` (${producto.totalReviews})`;
-    cardTextP.appendChild(ratingSpan);
-
     // Agregar los elementos al DOM
     col12Div.appendChild(titleH3);
+    col12Div.appendChild(priceH4)
     col12Div.appendChild(cardTextP);
 
     rowDiv.appendChild(col12Div);
