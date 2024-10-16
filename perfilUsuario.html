@@ -10,6 +10,9 @@
         body {
             background-color: #f8f9fa;
         }
+        .navbar {
+            background-color: #e31c76 !important;
+        }
         
         .profile-header {
             background-color: #e31c76;
@@ -27,26 +30,34 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="indice.html">Soya Shopping</a>
+            <a class="navbar-brand" href="#">
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375.000000 375.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,375.000000) scale(0.100000,-0.100000)" fill="#FFFFFF" stroke="none">
+                        <!-- SVG path data -->
+                    </g>
+                </svg>
+                Soya Shopping
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="indice.html">Inicio</a>
+                        <a class="nav-link active" href="pagina_inicial.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="VerProductos.html">Explorar</a>
+                        <a class="nav-link" href="filtroproductos.html">Explorar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="filtroproductos.html">Filtrar Productos</a>
+                        <a class="nav-link" href="perfil.html">Perfil</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="perfil.html">Perfil</a>
+                    <li>
+                        <button class="btn btn-outline-light btnrosa " type="submit" id="logout">CERRAR SESION</i></button>
                     </li>
+                
                 </ul>
             </div>
         </div>
@@ -54,40 +65,93 @@
 
     <header class="profile-header">
         <div class="container text-center">
-            <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="profile-img mb-3">
-            <h1 id="userName">Nombre de Usuario</h1>
+            <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="profile-img mb-3" id="imgPerfil">
+            <h1 id="Nusuario">Nombre de Usuario</h1>
             <p id="userEmail">usuario@ejemplo.com</p>
         </div>
     </header>
 
     <main class="container">
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Información Personal</h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Nombre: <span id="fullName"></span></li>
-                            <li class="list-group-item">Teléfono: <span id="phoneNumber"></span></li>
-                            <li class="list-group-item">Dirección: <span id="address"></span></li>
-                        </ul>
-                    </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active navperfil" id="home-tab" data-bs-toggle="tab"
+                data-bs-target="#Vprodus-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                aria-selected="true">Ver producto</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link navperfil" id="contact-tab" data-bs-toggle="tab"
+                data-bs-target="#addproduc-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane"
+                aria-selected="false">Agregar producto</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="Vprodus-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+              tabindex="0">
+              <div class="container m-4">
+                <div>
+                  <h2 class="mb-4 display-5 text-center">Mis productos</h2>
+                  <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
                 </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Mis Pedidos</h5>
-                        <ul class="list-group list-group-flush" id="ordersList">
-                            <!-- Los pedidos se cargarán dinámicamente aquí -->
-                        </ul>
-                    </div>
+              </div>
+              <div class="container">
+                <div class="row" id="productos-container">
+                  <h1>Aun no has Agregado productos</h1>
+  
                 </div>
+              </div>
+              <div class="pagination-container d-flex justify-content-center mt-3">
+                <nav>
+                  <ul class="pagination" id="pagination">
+                  </ul>
+                </nav>
+              </div>
             </div>
-        </div>
-        <div class="text-center mt-4">
-            <button id="logoutButton" class="btn btn-danger">Cerrar Sesión</button>
-        </div>
+  
+            <div class="tab-pane fade" id="addproduc-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 mb-4">
+                    <div>
+                      <h2 class="mb-4 display-5 text-center">Agregar Producto</h2>
+                      <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+                    </div>
+                    <form id="productForm" class="mb-5" enctype="multipart/form-data">
+                      <div class="mb-3">
+                        <input type="text" class="form-control" id="productName" placeholder="Nombre del producto"
+                          required>
+                      </div>
+                      <div class="mb-3">
+                        <input type="number" class="form-control" id="productPrice" placeholder="Precio" step="0.01"
+                          required>
+                      </div>
+                      <label for="sector">Categoria:</label>
+                      <select id="categoria" name="categoria" required>
+                        <option value="Comida">Comida</option>
+                        <option value="Ropa">Ropa</option>
+                        <option value="Tecnologia">Tecnologia</option>
+                        <option value="Autos">Autos</option>
+                        <option value="Barberias y saloness">Barberias y salones</option>
+                      </select>
+                      <div class="mb-3">
+                        <textarea class="form-control" id="productDescription" placeholder="Descripción"
+                          rows="3"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="productImage" class="form-label">Imagen del producto</label>
+                        <input type="file" class="form-control" id="productImage" accept="image/*">
+                      </div>
+                      <button type="submit" class="btn btn-primary w-100">Agregar Producto</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="Vnegocio-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+              ...</div>
+            <div class="tab-pane fade" id="addNegocio-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
+              tabindex="0">
+            </div>
+          </div>
     </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
@@ -95,47 +159,13 @@
             <p>&copy; 2024 Soya Shopping. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="js/perfil.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/Agg_producto.js"></script>
+    <script src="js/tarjetas.js"></script>
+    <script src="js/crear_tarjetas.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Simular carga de datos del usuario (reemplazar con llamadas a API reales)
-            const userData = {
-                name: 'Juan Pérez',
-                email: 'juan.perez@ejemplo.com',
-                fullName: 'Juan Antonio Pérez González',
-                phone: '+1234567890',
-                address: 'Calle Principal 123, Ciudad'
-            };
-
-            // Cargar datos del usuario
-            document.getElementById('userName').textContent = userData.name;
-            document.getElementById('userEmail').textContent = userData.email;
-            document.getElementById('fullName').textContent = userData.fullName;
-            document.getElementById('phoneNumber').textContent = userData.phone;
-            document.getElementById('address').textContent = userData.address;
-
-            // Simular carga de pedidos
-            const orders = [
-                { id: '001', date: '2024-03-15', total: '$50.00' },
-                { id: '002', date: '2024-03-10', total: '$75.50' },
-                { id: '003', date: '2024-03-05', total: '$120.00' }
-            ];
-
-            const ordersList = document.getElementById('ordersList');
-            orders.forEach(order => {
-                const li = document.createElement('li');
-                li.className = 'list-group-item';
-                li.textContent = `Pedido #${order.id} - Fecha: ${order.date} - Total: ${order.total}`;
-                ordersList.appendChild(li);
-            });
-
-            // Manejar cierre de sesión
-            document.getElementById('logoutButton').addEventListener('click', function() {
-                localStorage.removeItem('isLoggedIn');
-                window.location.href = 'indice.html';
-            });
-        });
-    </script>
+   
 </body>
 </html>

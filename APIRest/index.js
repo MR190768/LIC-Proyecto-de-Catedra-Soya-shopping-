@@ -151,7 +151,7 @@ app.post("/soyashopping/register/resen", (req,res)=>{
 app.post("/soyashopping/read/info/produ/name", (req,res)=>{
     try{
         const datosReq=req.body;
-        var sqlLeer=DBconexion.query("SELECT * FROM productosP WHERE NombreProd LIKE '%"+datosReq.name+"%'",function(error, results, fields){
+        var sqlLeer=DBconexion.query("SELECT * FROM producto WHERE NombreProd LIKE '%"+datosReq.name+"%'",function(error, results, fields){
             if(error){
                 console.log(error)
                 res.status(500).send({status:"FAIL",message:"Servidor no puedo procesar la solicitud"});
@@ -221,7 +221,7 @@ app.post("/soyashopping/read/info/produ/filtro", (req,res)=>{
                 consutla=consutla+" WHERE NombreProd="+categoria;
             }
             else{
-                if(datosReq.tipo=="popular"){
+                if(datosReq.tipo=="pupular"){
                     consutla=consutla+" ORDER BY promedio DESC"
                 }
                 else{
@@ -252,7 +252,7 @@ app.post("/soyashopping/read/info/produ/filtro", (req,res)=>{
 app.post("/soyashopping/read/info/produ", (req,res)=>{
     try{
         const datosReq=req.body;
-        var sqlLeer=DBconexion.query("SELECT * FROM productosD WHERE id_producto=?",[datosReq.id],function(error, results, fields){
+        var sqlLeer=DBconexion.query("SELECT * FROM producto WHERE id_producto=?",[datosReq.id],function(error, results, fields){
             if(error){
                 console.log(error)
                 res.status(500).send({status:"FAIL",message:"Servidor no puedo procesar la solicitud"});
@@ -307,6 +307,7 @@ app.post("/soyashopping/read/info/user", (req,res)=>{
             }
     }
     catch(error){
+        res.status(500).send({status:"FAIL",message:"Servidor no puedo procesar la solicitud"});
 
     }
 });
@@ -337,6 +338,7 @@ app.post("/soyashopping/read/info/user/produ", (req,res)=>{
             }
     }
     catch(error){
+        res.status(500).send({status:"FAIL",message:"Servidor no puedo procesar la solicitud"});
 
     }
 });

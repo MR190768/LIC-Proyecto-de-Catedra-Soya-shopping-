@@ -23,7 +23,7 @@ async function carga() {
             rutaOriginal = data[0].ImagenP;
             let rutaCorregida = rutaOriginal.replace(/\\/g, '/');
             imagen.src = "APIRest/" + rutaCorregida;
-            descripcion.innerText = data[0].Descripcion;
+            descripcion.innerText = data[0].descripcion;
             pName.innerText = data[0].nombreN;
             price.innerText = "$ " + data[0].precio
 

@@ -21,7 +21,9 @@ const carga = async function(){
         if (response.ok) {
             iper=document.getElementById("imgPerfil");
             Nper=document.getElementById("Nusuario");
+            Uemail=document.getElementById("userEmail")
             Nper.innerText=data[0].usuarioName;
+            Uemail.innerText=data[0].email,
             rutaOriginal=data[0].ImagenP;
             let rutaCorregida = rutaOriginal.replace(/\\/g, '/');
             iper.src="APIRest/"+rutaCorregida;

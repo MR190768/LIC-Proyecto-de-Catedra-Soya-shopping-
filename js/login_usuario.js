@@ -26,7 +26,7 @@
           localStorage.setItem('token', data.Authorization);
           alert('Inicio de sesión exitoso');
           // Redirigir al usuario a la página principal o dashboard
-            window.location.href = 'perfil.html';
+            window.location.href = 'perfilUsuario.html';
         } else {
           // Login fallido
           if (data.message === "Usuario o contraseña invalida") {
