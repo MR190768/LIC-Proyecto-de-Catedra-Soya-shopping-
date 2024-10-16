@@ -143,15 +143,23 @@
 
           <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
             <h5 class="text-uppercase">Footer Content</h5>
+<<<<<<< HEAD
 
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
               molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
               voluptatem veniam, est atque cumque eum delectus sint!
+=======
+            <p>
+              Somos una página web dedicada a la venta de productos de comercio electrónico.
+              Ofrecemos una amplia variedad de artículos para satisfacer todas tus necesidades.
+                ¡Gracias por visitarnos!
+>>>>>>> MR190768
             </p>
           </div>
 
 
+<<<<<<< HEAD
 
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Links</h5>
@@ -193,6 +201,8 @@
             </ul>
           </div>
 
+=======
+>>>>>>> MR190768
         </div>
 
       </div>
@@ -205,6 +215,52 @@
 
     </footer>
   </footer>
+<<<<<<< HEAD
+=======
+  
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('algin-form');
+        const messageTextarea = document.getElementById('resC');
+        const nameInput = document.getElementById('fullname');
+        const ratingInputs = document.querySelectorAll('input[name="rating"]');
+    
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+    
+            // Verificar si se ha seleccionado una calificación
+            let ratingSelected = false;
+            ratingInputs.forEach(input => {
+                if (input.checked) {
+                    ratingSelected = true;
+                }
+            });
+    
+            // Verificar todos los campos
+            if (messageTextarea.value.trim() === '') {
+                alert('Por favor, escribe un comentario.');
+                return;
+            }
+    
+            if (nameInput.value.trim() === '') {
+                alert('Por favor, ingresa tu nombre.');
+                return;
+            }
+    
+            if (!ratingSelected) {
+                alert('Por favor, selecciona una calificación.');
+                return;
+            }
+    
+            // Si todos los campos están completos, puedes enviar el formulario
+            alert('Comentario enviado con éxito!');
+            // Aquí puedes agregar el código para enviar el formulario o procesar los datos
+            form.reset(); // Reinicia el formulario después de enviarlo
+        });
+    });
+    </script>
+>>>>>>> MR190768
   <script src="js/Productos_datos.js"></script>
   <script src="js/cargar_datos.js"></script>
   <script src="js/crea_comentarios.js"></script>
